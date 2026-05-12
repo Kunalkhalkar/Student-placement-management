@@ -1,5 +1,6 @@
 package com.placement.Controller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,7 +18,9 @@ public class profile extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		
+		RequestDispatcher rd = request.getRequestDispatcher("nav.html");
+		rd.include(request, response);
+		out.println("this is the student profile");
 		//String student_id = (String) session.getAttribute("student_id"); 
 	}
 

@@ -8,6 +8,10 @@
 	box-sizing : border-box; 
 		font-family: 'Poppins', sans-serif;
 }
+
+.container-fluid{
+	margin : 0;
+}
 .container-fluid .nav .image{
 	margin-top: 0px;
 	width : 50px;

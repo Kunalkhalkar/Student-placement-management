@@ -1,7 +1,12 @@
+package com.placement.Repository;
 import java.sql.*;
 
 public class DBconfig {
 	protected Connection conn;
+	protected PreparedStatement psmt;
+	protected PreparedStatement psmtlogin;
+	protected PreparedStatement psmteducation;
+	
 	
 	public DBconfig(){
 		try {

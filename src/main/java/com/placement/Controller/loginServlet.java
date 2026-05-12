@@ -36,7 +36,7 @@ public class loginServlet extends HttpServlet {
 			ResultSet rs = psmt.executeQuery();
 			if(rs.next()) {
 				HttpSession session = request.getSession(true);
-				session.setAttribute("student_id", rs.getString("student_id"));
+				session.setAttribute("student_id", rs.getInt("student_id"));
 				out.println(session.getAttribute("student_id"));
 				response.sendRedirect("student");
 			}

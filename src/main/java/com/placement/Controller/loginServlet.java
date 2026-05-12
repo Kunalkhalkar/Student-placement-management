@@ -37,12 +37,11 @@ public class loginServlet extends HttpServlet {
 			if(rs.next()) {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("student_id", rs.getString("student_id"));
-				out.println((Integer) session.getAttribute("student_id"));
-				RequestDispatcher r = request.getRequestDispatcher("student");
-				r.forward(request, response);
+				out.println(session.getAttribute("student_id"));
+				response.sendRedirect("student");
 			}
 			else {
-				out.println("no data found");
+				response.sendRedirect("login.html");
 			}
 			
 			}
@@ -56,9 +55,6 @@ public class loginServlet extends HttpServlet {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

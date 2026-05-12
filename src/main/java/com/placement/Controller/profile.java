@@ -1,6 +1,5 @@
 package com.placement.Controller;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,17 +10,15 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
-@WebServlet("/student")
-public class student extends HttpServlet {
+@WebServlet("/profile")
+public class profile extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		RequestDispatcher rd  = request.getRequestDispatcher("nav.html");
-		rd.include(request, response);
 		HttpSession session = request.getSession();
-		out.println(session.getAttribute("student_id"));
+		
+		//String student_id = (String) session.getAttribute("student_id"); 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

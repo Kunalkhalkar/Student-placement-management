@@ -62,4 +62,7 @@ public class StudentRepositoryIMPL extends DBconfig implements StudentRepository
 			return false;
 		}
 	}
+	public StudentModel getStudent() {
+		return;
+	}
 }
